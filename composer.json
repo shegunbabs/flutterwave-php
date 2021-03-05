@@ -1,0 +1,43 @@
+{
+    "name": "shegun-babs/flutterwave-php",
+    "description": "Convenient PHP package for the Flutterwave API",
+    "keywords": [
+        "shegun-babs",
+        "flutterwave"
+    ],
+    "homepage": "https://github.com/shegun-babs/flutterwave-php",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Shegun Babs",
+            "email": "shegun.babs@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flutterwave\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Flutterwave\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
