@@ -2,7 +2,6 @@
 
 namespace Flutterwave;
 
-use Flutterwave\Service\CoreServiceFactory;
 use Flutterwave\Service\Misc;
 
 /**
