@@ -1,6 +1,6 @@
 <?php
 
-namespace Flutterwave\Service;
+namespace Flutterwave;
 
 use function array_key_exists;
 

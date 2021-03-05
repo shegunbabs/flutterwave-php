@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Flutterwave\Service;
+namespace Flutterwave;
 
 
 use Flutterwave\FlutterwaveClient;
