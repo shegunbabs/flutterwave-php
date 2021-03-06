@@ -2,6 +2,12 @@
 
 namespace Flutterwave;
 
+use Flutterwave\Service\Banks;
+use Flutterwave\Service\Misc;
+use Flutterwave\Service\PaymentRequest;
+use Flutterwave\Service\TokenizedCharges;
+use Flutterwave\Service\Transfers;
+use Flutterwave\Service\VerifyTransaction;
 use function array_key_exists;
 
 /**

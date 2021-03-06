@@ -4,8 +4,6 @@
 namespace Flutterwave;
 
 
-use Flutterwave\FlutterwaveClient;
-
 abstract class AbstractServiceFactory
 {
     private $client;

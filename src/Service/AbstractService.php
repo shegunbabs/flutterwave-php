@@ -20,7 +20,8 @@ abstract class AbstractService
         $this->client = $client;
     }
 
-    public function getClient(){
+    public function getClient(): FlutterwaveClient
+    {
         return $this->client;
     }
 
