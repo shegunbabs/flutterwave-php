@@ -7,6 +7,13 @@ namespace Flutterwave\Service;
 class Misc extends AbstractService
 {
 
+    public function resolveAccountDetails($params){
+
+        $path = 'accounts/resolve';
+        return $this->request('POST', $path, $params);
+    }
+
+
     public function getBalancesPerCurrency($currency="NGN"){
         $path = "balances/$currency";
         return $this->request("GET", $path);

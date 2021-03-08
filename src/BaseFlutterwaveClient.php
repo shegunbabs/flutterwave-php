@@ -108,7 +108,7 @@ class BaseFlutterwaveClient implements FlutterwaveClientInterface
 
         try{
             $response = $client->request($method, $path, $opts)->getBody();
-            return \GuzzleHttp\json_decode($response, true);
+            return \json_decode($response, true);
         }
         catch (RequestException $exception){
             return [

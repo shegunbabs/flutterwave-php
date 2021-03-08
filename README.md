@@ -18,8 +18,23 @@ composer require shegun-babs/flutterwave-php
 
 ## Usage
 
+###Banks
+
 ``` php
-// Usage description here
+use Flutterwave\FlutterwaveClient;
+
+$keys = [
+    'secret key here...',
+    'public key here...',
+    'encryption key here...',
+];
+
+$flutterwave = new FlutterwaveClient(...$keys);
+
+//get Banks
+$banks = $flutterwave->banks->getAllBanks();
+
+
 ```
 
 ### Testing

@@ -36,6 +36,6 @@ class CoreServiceFactory extends AbstractServiceFactory
 
     protected function getServiceClass($name)
     {
-        return array_key_exists($name, self::$classMap) ? self::$classMap[$name] : null;
+        return self::$classMap[$name] ?? null;
     }
 }
