@@ -3,6 +3,7 @@
 namespace Flutterwave;
 
 use Flutterwave\Service\Misc;
+use Flutterwave\Service\VirtualAccountNumber;
 
 /**
  * @property \Flutterwave\Service\Transfers $transfers
@@ -11,6 +12,7 @@ use Flutterwave\Service\Misc;
  * @property \Flutterwave\Service\Banks $banks
  * @property \Flutterwave\Service\VerifyTransaction $transactions
  * @property \Flutterwave\Service\TokenizedCharges $tokenizedCharges
+ * @property VirtualAccountNumber $virtualAccountNumber
  *
  */
 

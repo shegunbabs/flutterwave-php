@@ -8,6 +8,7 @@ use Flutterwave\Service\PaymentRequest;
 use Flutterwave\Service\TokenizedCharges;
 use Flutterwave\Service\Transfers;
 use Flutterwave\Service\VerifyTransaction;
+use Flutterwave\Service\VirtualAccountNumber;
 use function array_key_exists;
 
 /**
@@ -19,6 +20,7 @@ use function array_key_exists;
  * @property Misc $misc
  * @property Banks $banks
  * @property TokenizedCharges $tokenizedCharges
+ * @property VirtualAccountNumber $virtualAccountNumber
  *
  */
 
@@ -32,6 +34,7 @@ class CoreServiceFactory extends AbstractServiceFactory
         'misc' => Misc::class,
         'banks' => Banks::class,
         'tokenizedCharges' => TokenizedCharges::class,
+        'virtualAccountNumber' => VirtualAccountNumber::class,
     ];
 
     protected function getServiceClass($name)
