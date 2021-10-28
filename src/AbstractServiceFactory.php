@@ -6,6 +6,9 @@ namespace Flutterwave;
 
 abstract class AbstractServiceFactory
 {
+    /**
+     * @var FlutterwaveClient
+     */
     private $client;
     /**
      * @var array

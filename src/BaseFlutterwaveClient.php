@@ -11,7 +11,7 @@ use GuzzleHttp\Exception\TransferException;
 class BaseFlutterwaveClient implements FlutterwaveClientInterface
 {
 
-    const DEFAULT_API_BASE = 'https://api.flutterwave.com/v3/';
+    protected const DEFAULT_API_BASE = 'https://api.flutterwave.com/v3/';
 
     /**
      * @var array
@@ -29,10 +29,11 @@ class BaseFlutterwaveClient implements FlutterwaveClientInterface
     private $test_config;
 
     /**
+     *
      * BaseFlutterwaveClient constructor.
-     * @param string $config This is the secret key
+     *
      */
-    public function __construct($config)
+    public function __construct()
     {
         $args = func_get_args();
         $config = [
@@ -53,19 +54,19 @@ class BaseFlutterwaveClient implements FlutterwaveClientInterface
 
 
     /**
-     * @return null|string
+     * @return string
      */
-    public function getSecretKey()
+    public function getSecretKey(): string
     {
         return $this->config['secret_key'];
     }
 
-    public function getPublicKey()
+    public function getPublicKey(): string
     {
         return $this->config['public_key'];
     }
 
-    public function getEncryptionKey()
+    public function getEncryptionKey(): string
     {
         return $this->config['enc_key'];
     }
@@ -74,7 +75,8 @@ class BaseFlutterwaveClient implements FlutterwaveClientInterface
      * Sets the config as test when called
      * @return void
      */
-    public function setPaymentOptions(){
+    public function setPaymentOptions(): void
+    {
         $args = func_get_args();
         $this->config['payment_options'] = implode(',', $args);
     }
@@ -88,10 +90,10 @@ class BaseFlutterwaveClient implements FlutterwaveClientInterface
      * @param string $path
      * @param array $params
      * @param array $opts
-     * @return array|bool|float|int|mixed|object|string|null
+     * @return array
      * @throws GuzzleException
      */
-    public function request($method, $path, $params=[], $opts=[])
+    public function request(string $method, string $path, $params=[], $opts=[]) : array
     {
         //merge $opts with $this->getOpts()
         if (is_array($opts)):
@@ -105,7 +107,7 @@ class BaseFlutterwaveClient implements FlutterwaveClientInterface
         ]);
 
         $opts = $this->getOpts();
-        is_array($params) ? $opts = array_merge($opts, ['json' => $params]) : "" ;
+        count($params) ? $opts = array_merge($opts, ['json' => $params]) : "" ;
 
         try{
             $response = $client->request($method, $path, $opts)->getBody();
@@ -131,12 +133,13 @@ class BaseFlutterwaveClient implements FlutterwaveClientInterface
         }
     }
 
-    public function getApiBase()
+    public function getApiBase(): string
     {
         // TODO: Implement getApiBase() method.
+        return $this->getDefaultConfig()['api_base'];
     }
 
-    private function getDefaultConfig()
+    private function getDefaultConfig(): array
     {
         return [
             'secret_key' => null,

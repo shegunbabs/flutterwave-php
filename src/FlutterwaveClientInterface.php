@@ -7,13 +7,13 @@ namespace Flutterwave;
 interface FlutterwaveClientInterface
 {
 
-    public function getSecretKey();
+    public function getSecretKey(): string;
 
-    public function getPublicKey();
+    public function getPublicKey(): string;
 
-    public function getEncryptionKey();
+    public function getEncryptionKey(): string;
 
-    public function getApiBase();
+    public function getApiBase(): string;
 
-    public function request($method, $path, $params, $opts);
+    public function request(string $method, string $path, array $params, array $opts): array;
 }

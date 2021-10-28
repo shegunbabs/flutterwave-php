@@ -6,11 +6,13 @@ use Flutterwave\Service\Banks;
 use Flutterwave\Service\Misc;
 use Flutterwave\Service\PaymentRequest;
 use Flutterwave\Service\TokenizedCharges;
+use Flutterwave\Service\Transactions;
 use Flutterwave\Service\Transfers;
 use Flutterwave\Service\VerifyTransaction;
 use Flutterwave\Service\VirtualAccountNumber;
 
 /**
+ *
  * @property Transfers $transfers
  * @property PaymentRequest $paymentRequest
  * @property Misc $misc
