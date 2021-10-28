@@ -2,16 +2,21 @@
 
 namespace Flutterwave;
 
+use Flutterwave\Service\Banks;
 use Flutterwave\Service\Misc;
+use Flutterwave\Service\PaymentRequest;
+use Flutterwave\Service\TokenizedCharges;
+use Flutterwave\Service\Transfers;
+use Flutterwave\Service\VerifyTransaction;
 use Flutterwave\Service\VirtualAccountNumber;
 
 /**
- * @property \Flutterwave\Service\Transfers $transfers
- * @property \Flutterwave\Service\PaymentRequest $paymentRequest
- * @property \Flutterwave\Service\Misc $misc
- * @property \Flutterwave\Service\Banks $banks
- * @property \Flutterwave\Service\VerifyTransaction $transactions
- * @property \Flutterwave\Service\TokenizedCharges $tokenizedCharges
+ * @property Transfers $transfers
+ * @property PaymentRequest $paymentRequest
+ * @property Misc $misc
+ * @property Banks $banks
+ * @property VerifyTransaction $transactions
+ * @property TokenizedCharges $tokenizedCharges
  * @property VirtualAccountNumber $virtualAccountNumber
  *
  */

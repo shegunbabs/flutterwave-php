@@ -4,6 +4,7 @@ namespace Flutterwave;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Exception\TransferException;
 
@@ -83,12 +84,12 @@ class BaseFlutterwaveClient implements FlutterwaveClientInterface
     }
 
     /**
-     * @param $method
-     * @param $path
+     * @param string $method
+     * @param string $path
      * @param array $params
      * @param array $opts
      * @return array|bool|float|int|mixed|object|string|null
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function request($method, $path, $params=[], $opts=[])
     {
@@ -108,7 +109,7 @@ class BaseFlutterwaveClient implements FlutterwaveClientInterface
 
         try{
             $response = $client->request($method, $path, $opts)->getBody();
-            return \json_decode($response, true);
+            return \json_decode($response, true, 512, JSON_THROW_ON_ERROR);
         }
         catch (RequestException $exception){
             return [

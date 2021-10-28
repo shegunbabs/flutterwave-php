@@ -14,7 +14,7 @@ abstract class AbstractServiceFactory
 
     /**
      * AbstractServiceFactory constructor.
-     * @param $client
+     * @param FlutterwaveClient $client
      */
     public function __construct(FlutterwaveClient $client)
     {
