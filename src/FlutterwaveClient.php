@@ -17,7 +17,7 @@ use Flutterwave\Service\VirtualAccountNumber;
  * @property PaymentRequest $paymentRequest
  * @property Misc $misc
  * @property Banks $banks
- * @property VerifyTransaction $transactions
+ * @property Transactions $transactions
  * @property TokenizedCharges $tokenizedCharges
  * @property VirtualAccountNumber $virtualAccountNumber
  *

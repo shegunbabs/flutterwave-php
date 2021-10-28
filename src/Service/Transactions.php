@@ -17,14 +17,23 @@ class Transactions extends AbstractService
      */
     public function getAllTransactions(array $params) : array
     {
-        $path = 'transactions';
-        return $this->get($path, $params);
+        return $this->get('transactions', $params);
     }
 
 
-    public function getTransactionFee()
+    /**
+     * Get Flutterwave transaction fee
+     *
+     * @param array $params
+     * $params['amount']        int (required) This is the amount of the product or service to be charged from the customer
+     * $params['currency']      string (required) This is the specified currency to charge in
+     * $params['payment_type']  string (optional) The expected values are card, debit_ng_account, mobilemoney, bank_transfer, and ach_payment
+     *
+     * @return array
+     */
+    public function getTransactionFee(array $params) : array
     {
-
+        return $this->get("transactions/fee", $params);
     }
 
 
@@ -40,9 +49,14 @@ class Transactions extends AbstractService
     }
 
 
-    public function verifyTransaction()
+    /**
+     * @param int $id
+     * @return array
+     */
+    public function verifyTransaction(int $id): array
     {
-
+        $path = sprintf("transactions/%s/verify", $id);
+        return $this->get($path);
     }
 
 
