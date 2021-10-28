@@ -20,10 +20,12 @@ abstract class AbstractService
         $this->client = $client;
     }
 
+
     public function getClient(): FlutterwaveClient
     {
         return $this->client;
     }
+
 
     protected static function formatParams($params)
     {
@@ -39,9 +41,16 @@ abstract class AbstractService
         return $params;
     }
 
+
     protected function request($method, $path, $params=[], $opts=[])
     {
         return $this->getClient()->request($method, $path, static::formatParams($params), $opts);
+    }
+
+
+    protected function get($path, $params=[], $opts=[])
+    {
+        return $this->request('GET', $path, $params, $opts);
     }
 
 }
