@@ -23,9 +23,9 @@ class Transactions extends AbstractService
 
     /**
      * Get Flutterwave transaction fee
-     * array['amount']        int (required) This is the amount of the product or service to be charged from the customer
-     * array['currency']      string (required) This is the specified currency to charge in
-     * array['payment_type']  string (optional) The expected values are card, debit_ng_account, mobilemoney, bank_transfer, and ach_payment
+     * $params['amount']        int (required) This is the amount of the product or service to be charged from the customer
+     * $params['currency']      string (required) This is the specified currency to charge in
+     * $params['payment_type']  string (optional) The expected values are card, debit_ng_account, mobilemoney, bank_transfer, and ach_payment
      * @param array $params
      *
      * @return string[]
