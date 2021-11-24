@@ -8,11 +8,9 @@ use Flutterwave\Service\PaymentRequest;
 use Flutterwave\Service\TokenizedCharges;
 use Flutterwave\Service\Transactions;
 use Flutterwave\Service\Transfers;
-use Flutterwave\Service\VerifyTransaction;
 use Flutterwave\Service\VirtualAccountNumber;
 
 /**
- *
  * @property Transfers $transfers
  * @property PaymentRequest $paymentRequest
  * @property Misc $misc
@@ -20,13 +18,9 @@ use Flutterwave\Service\VirtualAccountNumber;
  * @property Transactions $transactions
  * @property TokenizedCharges $tokenizedCharges
  * @property VirtualAccountNumber $virtualAccountNumber
- *
  */
-
-
 class FlutterwaveClient extends BaseFlutterwaveClient
 {
-
     /**
      * @var CoreServiceFactory
      */
@@ -34,7 +28,7 @@ class FlutterwaveClient extends BaseFlutterwaveClient
 
     public function __get($name)
     {
-        if ( null === $this->coreServiceFactory ){
+        if (null === $this->coreServiceFactory) {
             $this->coreServiceFactory = new CoreServiceFactory($this);
         }
 
