@@ -1,12 +1,9 @@
 <?php
 
-
 namespace Flutterwave;
-
 
 interface FlutterwaveClientInterface
 {
-
     public function getSecretKey(): string;
 
     public function getPublicKey(): string;

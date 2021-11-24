@@ -9,7 +9,6 @@ use Flutterwave\Service\TokenizedCharges;
 use Flutterwave\Service\Transfers;
 use Flutterwave\Service\VerifyTransaction;
 use Flutterwave\Service\VirtualAccountNumber;
-use function array_key_exists;
 
 /**
  * Service factory class for API resources in the root namespace.
@@ -21,14 +20,11 @@ use function array_key_exists;
  * @property Banks $banks
  * @property TokenizedCharges $tokenizedCharges
  * @property VirtualAccountNumber $virtualAccountNumber
- *
  */
-
 class CoreServiceFactory extends AbstractServiceFactory
 {
-
     private static $classMap = [
-        "transfers" => Transfers::class,
+        'transfers' => Transfers::class,
         'paymentRequest' => PaymentRequest::class,
         'transactions' => VerifyTransaction::class,
         'misc' => Misc::class,
